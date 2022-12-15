@@ -1,0 +1,37 @@
+\contentsline {section}{Contents}{3}{section*.2}%
+\contentsline {section}{\numberline {1}Problem Background}{4}{section.1}%
+\contentsline {section}{\numberline {2}Restatement of Questions}{4}{section.2}%
+\contentsline {paragraph}{Problem 1:}{4}{section*.3}%
+\contentsline {paragraph}{Problem 2:}{5}{section*.4}%
+\contentsline {section}{\numberline {3}Assumptions and Justifications}{5}{section.3}%
+\contentsline {paragraph}{Assumption 1:}{5}{section*.5}%
+\contentsline {paragraph}{Assumption 2:}{5}{section*.6}%
+\contentsline {paragraph}{Assumption 3:}{5}{section*.7}%
+\contentsline {section}{\numberline {4}Notations}{6}{section.4}%
+\contentsline {section}{\numberline {5}Methodology: Problem 1}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Overview}{6}{subsection.5.1}%
+\contentsline {paragraph}{Aim:}{6}{section*.11}%
+\contentsline {paragraph}{Method:}{7}{section*.12}%
+\contentsline {subsection}{\numberline {5.2}Factor Selection and Projection}{7}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Model 1}{11}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Stage 1. Reducing Variables}{11}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Stage 2. Fit 3 Variables into 1}{12}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Stage 3. Compute the Result}{13}{subsubsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.4}Model 2}{14}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Stage 1. Picking 3 Variables with Stepwise Regression}{14}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Stage 2. Predicting $c$ with STIRPAT Equation}{14}{subsubsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.5}Model 3}{16}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Stage 1. Considering a Differential Equation Model}{16}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Stage 2. Establishing the Feedback Functions}{16}{subsubsection.5.5.2}%
+\contentsline {paragraph}{Human Activities Feedback}{16}{section*.24}%
+\contentsline {paragraph}{\ce {CO2} Concentraion Feedback}{17}{section*.25}%
+\contentsline {subsubsection}{\numberline {5.5.3}Stage 3. Solve the Differential Equation}{17}{subsubsection.5.5.3}%
+\contentsline {section}{\numberline {6}Methodology: Problem 2}{17}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Model 4: Prediction Temperature Trends}{17}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Model 5: Measuring Relationship between Temperature and \ce {CO2}}{19}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Qualitative Analysis}{19}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Quantitative Analysis}{21}{subsubsection.6.2.2}%
+\contentsline {section}{\numberline {7}Model Comparison and Evaluation}{22}{section.7}%
+\contentsline {section}{\numberline {8}Strengths and Weaknesses}{23}{section.8}%
+\contentsline {section}{\numberline {9}Conclusion}{24}{section.9}%
+\contentsline {section}{References}{25}{section*.34}%

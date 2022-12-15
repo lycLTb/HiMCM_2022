@@ -1,0 +1,34 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+  \PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+  \PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+  \PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+  \PYG{k+kn}{import} \PYG{n+nn}{seaborn} \PYG{k}{as} \PYG{n+nn}{sns}
+  \PYG{k+kn}{from} \PYG{n+nn}{sklearn.metrics} \PYG{k+kn}{import} \PYG{n}{r2\PYGZus{}score}
+  \PYG{k+kn}{import} \PYG{n+nn}{statsmodels.api} \PYG{k}{as} \PYG{n+nn}{sm}
+
+  \PYG{n}{df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}excel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}problem2\PYGZus{}data.xlsx\PYGZsq{}}\PYG{p}{)}
+  \PYG{n}{l}\PYG{p}{,} \PYG{n}{r} \PYG{o}{=} \PYG{l+m+mi}{1958}\PYG{p}{,} \PYG{l+m+mi}{2021}
+  \PYG{n}{sns}\PYG{o}{.}\PYG{n}{set}\PYG{p}{(}\PYG{n}{style} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}ticks\PYGZsq{}}\PYG{p}{)}
+  \PYG{n+nb+bp}{cls} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}8ECFC9\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}FFBE7A\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}FA7F6F\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}82B0D2\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}BEB8DC\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}E7DAD2\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}999999\PYGZsq{}}\PYG{p}{]}
+
+  \PYG{k}{def} \PYG{n+nf}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{,} \PYG{n}{p3}\PYG{p}{,} \PYG{n}{p5}\PYG{p}{,} \PYG{n}{p6}\PYG{p}{,} \PYG{n}{p8}\PYG{p}{,} \PYG{n}{p9}\PYG{p}{,} \PYG{n}{p11}\PYG{p}{):}
+      \PYG{n}{p4} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{math}\PYG{o}{.}\PYG{n}{pi} \PYG{o}{/} \PYG{l+m+mi}{10}
+      \PYG{n}{p7} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{math}\PYG{o}{.}\PYG{n}{pi} \PYG{o}{/} \PYG{l+m+mi}{12}
+      \PYG{n}{p10} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{math}\PYG{o}{.}\PYG{n}{pi} \PYG{o}{/} \PYG{l+m+mi}{11}
+      \PYG{k}{return} \PYG{n}{p1}\PYG{o}{*}\PYG{n}{x} \PYG{o}{+} \PYG{n}{p2} \PYG{o}{+} \PYG{n}{p3}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{p4}\PYG{o}{*}\PYG{n}{x} \PYG{o}{+} \PYG{n}{p5}\PYG{p}{)} \PYG{o}{+} \PYG{n}{p6}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{p7}\PYG{o}{*}\PYG{n}{x} \PYG{o}{+} \PYG{n}{p8}\PYG{p}{)} \PYG{o}{+} \PYG{n}{p9}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{p10}\PYG{o}{*}\PYG{n}{x} \PYG{o}{+} \PYG{n}{p11}\PYG{p}{)}
+
+  \PYG{n}{p0} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{p}{)]}
+  \PYG{n}{bd} \PYG{o}{=} \PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{np}\PYG{o}{.}\PYG{n}{inf}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{inf}\PYG{p}{)}
+  \PYG{n}{x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{r} \PYG{o}{\PYGZhy{}} \PYG{n}{l} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)}
+  \PYG{n}{y} \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Degrees C\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{to\PYGZus{}numpy}\PYG{p}{()}
+
+  \PYG{n}{lowess} \PYG{o}{=} \PYG{n}{sm}\PYG{o}{.}\PYG{n}{nonparametric}\PYG{o}{.}\PYG{n}{lowess}
+  \PYG{n}{result} \PYG{o}{=} \PYG{n}{lowess}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{frac} \PYG{o}{=} \PYG{l+m+mf}{0.15}\PYG{p}{,} \PYG{n}{it} \PYG{o}{=} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{n}{delta} \PYG{o}{=} \PYG{l+m+mf}{0.}\PYG{p}{)[}\PYG{o}{...}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}
+
+  \PYG{n}{paras} \PYG{o}{=} \PYG{n}{optimize}\PYG{o}{.}\PYG{n}{curve\PYGZus{}fit}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{result}\PYG{p}{,} \PYG{n}{maxfev} \PYG{o}{=} \PYG{l+m+mi}{5000000}\PYG{p}{,} \PYG{n}{p0} \PYG{o}{=} \PYG{n}{p0}\PYG{p}{,} \PYG{n}{bounds} \PYG{o}{=} \PYG{n}{bd}\PYG{p}{)[}\PYG{l+m+mi}{0}\PYG{p}{]}
+  \PYG{n}{paras} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{paras}\PYG{p}{)}
+  \PYG{n}{func} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{o}{*}\PYG{n}{paras}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{paras}\PYG{p}{)}
+
+\end{Verbatim}

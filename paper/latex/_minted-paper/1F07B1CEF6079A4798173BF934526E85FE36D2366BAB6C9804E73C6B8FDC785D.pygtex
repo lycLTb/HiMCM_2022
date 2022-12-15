@@ -1,0 +1,68 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+  \PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{port} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+\PYG{k+kn}{port} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{port} \PYG{n+nn}{seaborn} \PYG{k}{as} \PYG{n+nn}{sns}
+\PYG{k+kn}{om} \PYG{n+nn}{scipy} \PYG{k+kn}{import} \PYG{n}{optimize}\PYG{p}{,} \PYG{n}{integrate}
+\PYG{k+kn}{port} \PYG{n+nn}{math}
+
+\PYG{k}{f} \PYG{n+nf}{read\PYGZus{}pre}\PYG{p}{():}
+\PYG{n}{Idf} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}../single\PYGZus{}variable\PYGZus{}projection.csv\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{Idf}\PYG{o}{.}\PYG{n}{index} \PYG{o}{=} \PYG{n}{df}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{o}{...}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{to\PYGZus{}numpy}\PYG{p}{()}
+\PYG{n}{Ireturn} \PYG{n}{df}\PYG{o}{.}\PYG{n}{drop}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Unnamed: 0\PYGZsq{}}\PYG{p}{,} \PYG{n}{axis} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{)}
+
+ \PYG{o}{=} \PYG{n}{read\PYGZus{}pre}\PYG{p}{()}
+\PYG{n}{percentage} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mf}{100.} \PYG{o}{\PYGZhy{}} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Fossil Fuel Percentage\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{to\PYGZus{}numpy}\PYG{p}{())} \PYG{o}{/} \PYG{l+m+mf}{100.}
+\PYG{n}{ff} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mi}{15}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{])}
+ \PYG{o}{=} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}City Population\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{to\PYGZus{}numpy}\PYG{p}{()}
+ \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{n}{cP}\PYG{p}{,} \PYG{n}{df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Population\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{to\PYGZus{}numpy}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{cP}\PYG{p}{])}
+
+\PYG{n}{pulation\PYGZus{}scale} \PYG{o}{=} \PYG{l+m+mi}{10} \PYG{o}{**} \PYG{l+m+mi}{8}
+\PYG{n}{m2mass} \PYG{o}{=} \PYG{l+m+mf}{7.828} \PYG{o}{*} \PYG{l+m+mi}{10} \PYG{o}{**} \PYG{l+m+mi}{9}
+
+\PYG{n}{index} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{coff}\PYG{p}{,} \PYG{n}{cP}\PYG{p}{)} \PYG{o}{*} \PYG{n}{population\PYGZus{}scale} \PYG{o}{/} \PYG{n}{ppm2mass}
+
+\PYG{n}{ale} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mf}{0.3}\PYG{p}{])}
+\PYG{n}{r} \PYG{o}{=} \PYG{l+m+mf}{1.}
+\PYG{n}{dexs} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{scale}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{vstack}\PYG{p}{((}\PYG{n}{NEpercentage}\PYG{p}{,} \PYG{n}{CEindex}\PYG{p}{)))} \PYG{o}{+} \PYG{n}{err}
+
+\PYG{n}{s}\PYG{o}{.}\PYG{n}{set}\PYG{p}{(}\PYG{n}{style} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}whitegrid\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb+bp}{s} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}8ECFC9\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}FFBE7A\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}FA7F6F\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}82B0D2\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}BEB8DC\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}E7DAD2\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}999999\PYGZsq{}}\PYG{p}{]}
+ \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{l+m+mi}{1990}\PYG{p}{,} \PYG{l+m+mi}{2101}\PYG{p}{)}
+
+\PYG{n}{rameters} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{polyfit}\PYG{p}{(}\PYG{n}{xx}\PYG{p}{,} \PYG{n}{indexs}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{)}
+\PYG{n}{nc\PYGZus{}3} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{poly1d}\PYG{p}{(}\PYG{n}{parameters}\PYG{p}{)}
+
+
+\PYG{k}{f} \PYG{n+nf}{f0}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,} \PYG{n}{t}\PYG{p}{):}
+\PYG{n}{Iif} \PYG{n}{y} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{450}\PYG{p}{:}
+\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireturn} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.00002} \PYG{o}{*} \PYG{n}{y} \PYG{o}{**} \PYG{l+m+mf}{1.5}
+\PYG{n}{Ielse}\PYG{p}{:}
+\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireturn} \PYG{o}{\PYGZhy{}}\PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{((}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{450}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{10}\PYG{p}{)}
+
+\PYG{k}{f} \PYG{n+nf}{f1}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+\PYG{n}{Ireturn} \PYG{n}{func\PYGZus{}3}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+
+\PYG{k}{f} \PYG{n+nf}{func}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{y}\PYG{p}{):}
+\PYG{n}{Ireturn} \PYG{n}{f0}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)} \PYG{o}{+} \PYG{n}{f1}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}
+
+\PYG{n}{art}\PYG{p}{,} \PYG{n}{end} \PYG{o}{=} \PYG{l+m+mi}{2020}\PYG{p}{,} \PYG{l+m+mi}{2100}
+
+\PYG{n}{sult} \PYG{o}{=} \PYG{n}{integrate}\PYG{o}{.}\PYG{n}{solve\PYGZus{}ivp}\PYG{p}{(}\PYG{n}{func}\PYG{p}{,} \PYG{p}{(}\PYG{n}{start}\PYG{p}{,} \PYG{n}{end}\PYG{p}{),} \PYG{p}{[}\PYG{l+m+mf}{414.24}\PYG{p}{],} \PYG{n}{dense\PYGZus{}output} \PYG{o}{=} \PYG{k+kc}{True}\PYG{p}{)}
+\PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{start} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{20}\PYG{p}{,} \PYG{n}{end} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{o}{=} \PYG{n}{result}\PYG{o}{.}\PYG{n}{sol}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)[}\PYG{l+m+mi}{0}\PYG{p}{]}
+
+\PYG{n}{t}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{n+nb+bp}{cls}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{],} \PYG{n}{linewidth} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{t}\PYG{o}{.}\PYG{n}{axhline}\PYG{p}{(}\PYG{n}{y} \PYG{o}{=} \PYG{l+m+mi}{450}\PYG{p}{,} \PYG{n}{ls} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{n+nb+bp}{cls}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{],} \PYG{n}{label} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}450 ppm\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{result}\PYG{o}{.}\PYG{n}{sol}\PYG{p}{(}\PYG{l+m+mi}{2050}\PYG{p}{))}
+\PYG{n}{t}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Year\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{t}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}CO2 Concentration / PPM\PYGZsq{}}\PYG{p}{)}
+\PYG{c+c1}{plt.title(\PYGZsq{}Model 3 Projection\PYGZsq{})}
+
+\PYG{c+c1}{print(list(y))}
+\PYG{n}{t}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{()}
+\PYG{c+c1}{plt.show()}
+\PYG{n}{t}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}../ODE.png\PYGZsq{}}\PYG{p}{,} \PYG{n}{dpi}\PYG{o}{=}\PYG{l+m+mi}{300}\PYG{p}{)}
+
+\end{Verbatim}
