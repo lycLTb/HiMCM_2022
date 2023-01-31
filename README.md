@@ -2,7 +2,7 @@
 
 Our full HiMCM 2022 repository. Ranked Finalist. 
 
-Perhaps the LaTeX template (`/paper/latex`) will be useful. Gotta be glad if this repo does some help to you >\_< .
+Perhaps the LaTeX template (`/paper/latex`) will be useful. Gotta feel happy if this repo does some help to you >\_< .
 
 ---
 
