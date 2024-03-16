@@ -17,10 +17,10 @@ sns.set(palette = sns.hls_palette(10, l=0.7, s=0.4))
 
 ### Data Analysis
 
-[python numpy 常用随机数的产生方法 - CSDN](https://blog.csdn.net/m0_37804518/article/details/78490709)
-[Python中numpy数组的拼接、合并_赵至柔的博客-CSDN博客_numpy 拼接](https://blog.csdn.net/qq_39516859/article/details/80666070)
-[Python数据分析之numpy数组全解析 - 奥辰 - 博客园 (cnblogs.com)](https://www.cnblogs.com/chenhuabin/p/11412818.html#_label3)
-[十分钟入门 Pandas | Pandas 中文](https://www.pypandas.cn/docs/getting_started/10min.html)
+- [python numpy 常用随机数的产生方法 - CSDN](https://blog.csdn.net/m0_37804518/article/details/78490709)
+- [Python中numpy数组的拼接、合并_赵至柔的博客-CSDN博客_numpy 拼接](https://blog.csdn.net/qq_39516859/article/details/80666070)
+- [Python数据分析之numpy数组全解析 - 奥辰 - 博客园 (cnblogs.com)](https://www.cnblogs.com/chenhuabin/p/11412818.html#_label3)
+- [十分钟入门 Pandas | Pandas 中文](https://www.pypandas.cn/docs/getting_started/10min.html)
 
 ## Essay
 
@@ -38,15 +38,14 @@ sns.set(palette = sns.hls_palette(10, l=0.7, s=0.4))
 
 ## Type Setting
 
-[LaTeX排版札记：part 4—插入图片（并排显示、自定义编号） - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/32925549)
-
-[LaTeX札记（二）：表格 | Levitate_ (levitate-qian.github.io)](https://levitate-qian.github.io/2020/07/06/latex-note-02/)
+- [LaTeX排版札记：part 4—插入图片（并排显示、自定义编号） - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/32925549)
+- [LaTeX札记（二）：表格 | Levitate_ (levitate-qian.github.io)](https://levitate-qian.github.io/2020/07/06/latex-note-02/)
 
 ## Writing
 
-[浩然：为时不晚！美赛最后一天就能让你跃升到M奖的绝招！- bilibili](https://www.bilibili.com/video/BV1HZ4y1d7xf/)
-[【2022美赛大招】O奖揭秘怎样避免S奖？原来玄机在这里 - bilibili](https://www.bilibili.com/video/BV1LT4y1X78r) Note：这个说的是 MCM，即面向大学学生的比赛。看 Part 1, 3, 4 差不多了。
-[【拿奖绝招】如何模仿美赛O奖论文？H奖究竟比O奖差在哪？ - bilibili](https://www.bilibili.com/video/BV15R4y1M7fX)
+- [浩然：为时不晚！美赛最后一天就能让你跃升到M奖的绝招！- bilibili](https://www.bilibili.com/video/BV1HZ4y1d7xf/)
+- [【2022美赛大招】O奖揭秘怎样避免S奖？原来玄机在这里 - bilibili](https://www.bilibili.com/video/BV1LT4y1X78r) Note：这个说的是 MCM，即面向大学学生的比赛。看 Part 1, 3, 4 差不多了。
+- [【拿奖绝招】如何模仿美赛O奖论文？H奖究竟比O奖差在哪？ - bilibili](https://www.bilibili.com/video/BV15R4y1M7fX)
 
 三个视频一共 1h 左右。
 
@@ -118,11 +117,8 @@ sns.set(palette = sns.hls_palette(10, l=0.7, s=0.4))
 ## Thoughts
 
 - 美赛评分注重创新。搞点有意思的。但是其实我不是很懂什么才叫有意思。
-
 - 很多东西的参数是可以直接人为钦定的。至少在 HiMCM。
-
 - 论文好看和文字水平很重要。所以打算用 LaTeX。
-
 - 对于算法，重要的是知道有这么个东西，了解其应用场景和局限性。细节部分，可以等用到了再去学。经典算法都有现成的库可以做，所以其实算法可以完全不用学。不过我还是喜欢学。
 
 ## Final Notes
